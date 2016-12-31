@@ -1,0 +1,358 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		310F04731E1755190089D56B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F04721E1755190089D56B /* AppDelegate.swift */; };
+		310F04751E1755190089D56B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 310F04741E1755190089D56B /* GameScene.sks */; };
+		310F04771E1755190089D56B /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 310F04761E1755190089D56B /* Actions.sks */; };
+		310F04791E1755190089D56B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F04781E1755190089D56B /* GameScene.swift */; };
+		310F047B1E1755190089D56B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310F047A1E1755190089D56B /* GameViewController.swift */; };
+		310F047E1E1755190089D56B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 310F047C1E1755190089D56B /* Main.storyboard */; };
+		310F04801E1755190089D56B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 310F047F1E1755190089D56B /* Assets.xcassets */; };
+		310F04831E1755190089D56B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 310F04811E1755190089D56B /* LaunchScreen.storyboard */; };
+		310F048C1E17563C0089D56B /* ProtocolBuffers.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 310F048A1E17563C0089D56B /* ProtocolBuffers.framework */; };
+		310F048D1E17563C0089D56B /* ProtocolBuffers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 310F048A1E17563C0089D56B /* ProtocolBuffers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		310F048E1E17563C0089D56B /* Underdark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 310F048B1E17563C0089D56B /* Underdark.framework */; };
+		310F048F1E17563C0089D56B /* Underdark.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 310F048B1E17563C0089D56B /* Underdark.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		310F04901E17563C0089D56B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				310F048D1E17563C0089D56B /* ProtocolBuffers.framework in Embed Frameworks */,
+				310F048F1E17563C0089D56B /* Underdark.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		310F046F1E1755190089D56B /* Dwarrowdelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dwarrowdelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		310F04721E1755190089D56B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		310F04741E1755190089D56B /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		310F04761E1755190089D56B /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		310F04781E1755190089D56B /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		310F047A1E1755190089D56B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		310F047D1E1755190089D56B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		310F047F1E1755190089D56B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		310F04821E1755190089D56B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		310F04841E1755190089D56B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		310F048A1E17563C0089D56B /* ProtocolBuffers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProtocolBuffers.framework; path = Underdark/ProtocolBuffers.framework; sourceTree = "<group>"; };
+		310F048B1E17563C0089D56B /* Underdark.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Underdark.framework; path = Underdark/Underdark.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		310F046C1E1755180089D56B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				310F048C1E17563C0089D56B /* ProtocolBuffers.framework in Frameworks */,
+				310F048E1E17563C0089D56B /* Underdark.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		310F04661E1755180089D56B = {
+			isa = PBXGroup;
+			children = (
+				310F048A1E17563C0089D56B /* ProtocolBuffers.framework */,
+				310F048B1E17563C0089D56B /* Underdark.framework */,
+				310F04711E1755190089D56B /* Dwarrowdelf */,
+				310F04701E1755190089D56B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		310F04701E1755190089D56B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				310F046F1E1755190089D56B /* Dwarrowdelf.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		310F04711E1755190089D56B /* Dwarrowdelf */ = {
+			isa = PBXGroup;
+			children = (
+				310F04721E1755190089D56B /* AppDelegate.swift */,
+				310F04741E1755190089D56B /* GameScene.sks */,
+				310F04761E1755190089D56B /* Actions.sks */,
+				310F04781E1755190089D56B /* GameScene.swift */,
+				310F047A1E1755190089D56B /* GameViewController.swift */,
+				310F047C1E1755190089D56B /* Main.storyboard */,
+				310F047F1E1755190089D56B /* Assets.xcassets */,
+				310F04811E1755190089D56B /* LaunchScreen.storyboard */,
+				310F04841E1755190089D56B /* Info.plist */,
+			);
+			path = Dwarrowdelf;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		310F046E1E1755180089D56B /* Dwarrowdelf */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 310F04871E1755190089D56B /* Build configuration list for PBXNativeTarget "Dwarrowdelf" */;
+			buildPhases = (
+				310F046B1E1755180089D56B /* Sources */,
+				310F046C1E1755180089D56B /* Frameworks */,
+				310F046D1E1755180089D56B /* Resources */,
+				310F04901E17563C0089D56B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Dwarrowdelf;
+			productName = Dwarrowdelf;
+			productReference = 310F046F1E1755190089D56B /* Dwarrowdelf.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		310F04671E1755180089D56B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = Mensly;
+				TargetAttributes = {
+					310F046E1E1755180089D56B = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 84CR7RP3LE;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 310F046A1E1755180089D56B /* Build configuration list for PBXProject "Dwarrowdelf" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 310F04661E1755180089D56B;
+			productRefGroup = 310F04701E1755190089D56B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				310F046E1E1755180089D56B /* Dwarrowdelf */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		310F046D1E1755180089D56B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				310F047E1E1755190089D56B /* Main.storyboard in Resources */,
+				310F04751E1755190089D56B /* GameScene.sks in Resources */,
+				310F04801E1755190089D56B /* Assets.xcassets in Resources */,
+				310F04831E1755190089D56B /* LaunchScreen.storyboard in Resources */,
+				310F04771E1755190089D56B /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		310F046B1E1755180089D56B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				310F04791E1755190089D56B /* GameScene.swift in Sources */,
+				310F047B1E1755190089D56B /* GameViewController.swift in Sources */,
+				310F04731E1755190089D56B /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		310F047C1E1755190089D56B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				310F047D1E1755190089D56B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		310F04811E1755190089D56B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				310F04821E1755190089D56B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		310F04851E1755190089D56B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		310F04861E1755190089D56B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		310F04881E1755190089D56B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 84CR7RP3LE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Underdark",
+				);
+				INFOPLIST_FILE = Dwarrowdelf/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ly.mens.Dwarrowdelf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		310F04891E1755190089D56B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 84CR7RP3LE;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Underdark",
+				);
+				INFOPLIST_FILE = Dwarrowdelf/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ly.mens.Dwarrowdelf;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		310F046A1E1755180089D56B /* Build configuration list for PBXProject "Dwarrowdelf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				310F04851E1755190089D56B /* Debug */,
+				310F04861E1755190089D56B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		310F04871E1755190089D56B /* Build configuration list for PBXNativeTarget "Dwarrowdelf" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				310F04881E1755190089D56B /* Debug */,
+				310F04891E1755190089D56B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 310F04671E1755180089D56B /* Project object */;
+}
