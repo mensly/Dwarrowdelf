@@ -12,7 +12,7 @@ import Underdark
 
 class GameScene: SKScene, UDTransportDelegate {
     
-    private var target : SKLabelNode?
+    private var target : SKSpriteNode?
     private var spinnyNode : SKShapeNode?
     
     let appId: Int32 = 141573
@@ -40,7 +40,7 @@ class GameScene: SKScene, UDTransportDelegate {
         }
         
         // Get target node from scene and store it for use later
-        self.target = self.childNode(withName: "//target") as? SKLabelNode
+        self.target = self.childNode(withName: "//target") as? SKSpriteNode
         
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
@@ -56,13 +56,26 @@ class GameScene: SKScene, UDTransportDelegate {
         }
     }
     
+    func checkTap(atPoint pos : CGPoint) {
+        guard let target = self.target, enabled else { return }
+        if (target.contains(pos)) {
+            let potentialLinks = Array(peers.values.flatMap { $0.first })
+            if (!potentialLinks.isEmpty) {
+                potentialLinks[Int(arc4random_uniform(UInt32(potentialLinks.count)))]
+                    .sendMessage(message: SetEnabled(enabled: true))
+                enabled = false
+            }
+        }
+    }
     
     func touchDown(atPoint pos : CGPoint) {
         addChild(atPoint: pos, withColor: SKColor.green)
+        checkTap(atPoint: pos)
     }
     
     func touchMoved(toPoint pos : CGPoint) {
         addChild(atPoint: pos, withColor: SKColor.blue)
+        checkTap(atPoint: pos)
     }
     
     func touchUp(atPoint pos : CGPoint) {
@@ -118,13 +131,10 @@ class GameScene: SKScene, UDTransportDelegate {
         if (peers[String(link.nodeId)] == nil) {
             peers[String(link.nodeId)] = [UDLink]()
             if (enabled) {
-                print("I am enabled")
                 if (link.nodeId < nodeId) {
-                    print("Disable other")
                     link.sendMessage(message: SetEnabled(enabled: false))
                 }
                 else {
-                    print("Disable myself")
                     self.enabled = false
                 }
             }
