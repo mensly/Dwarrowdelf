@@ -75,8 +75,7 @@ class GameScene: SKScene, UDTransportDelegate {
         }
         if (shared) {
             for link in peers.values.flatMap({ $0.first }) {
-                let model = ChildModel(pos: pos, color: color)
-                link.sendFrame(model.data)
+                link.sendMessage(message: ChildModel(pos: pos, color: color))
             }
         }
     }
@@ -98,8 +97,15 @@ class GameScene: SKScene, UDTransportDelegate {
     }
     
     public func transport(_ transport: UDTransport, link: UDLink, didReceiveFrame frameData: Data) {
-        let model = ChildModel(data: frameData)
-        addChild(atPoint: model.pos, withColor: model.color, shared: false)
+        guard let message = parseMessage(data: frameData) else { return }
+        switch (message) {
+        case let model as ChildModel:
+            addChild(atPoint: model.pos, withColor: model.color, shared: false)
+        case let enabled as SetEnabled:
+            // TODO
+            break
+        default: break
+        }
     }
 
     public func transport(_ transport: UDTransport, linkConnected link: UDLink) {
@@ -133,52 +139,4 @@ class GameScene: SKScene, UDTransportDelegate {
         // Called before each frame is rendered
     }
     
-}
-
-struct ChildModel {
-    let x: Float32
-    let y: Float32
-    let r: Float32
-    let g: Float32
-    let b: Float32
-    let a: Float32
-    
-    init(pos : CGPoint, color: SKColor) {
-        x = Float32(pos.x)
-        y = Float32(pos.y)
-        
-        var r: CGFloat = 0
-        var g: CGFloat = 0
-        var b: CGFloat = 0
-        var a: CGFloat = 0
-        
-        color.getRed(&r, green: &g, blue: &b, alpha: &a)
-        
-        self.r = Float32(r)
-        self.g = Float32(g)
-        self.b = Float32(b)
-        self.a = Float32(a)
-    }
-    
-    init(data: Data) {
-        var floats = [Float32](repeating: 0, count:6)
-        _ = data.copyBytes(to: UnsafeMutableBufferPointer.init(
-            start: &floats, count: floats.count))
-        x = floats[0]
-        y = floats[1]
-        r = floats[2]
-        g = floats[3]
-        b = floats[4]
-        a = floats[5]
-    }
-    
-    var pos: CGPoint { return CGPoint(x: CGFloat(x), y: CGFloat(y)) }
-    var color: SKColor { return SKColor(colorLiteralRed: Float(r),
-                                        green: Float(g),
-                                        blue: Float(b),
-                                        alpha: Float(a)) }
-    var data: Data {
-        var floats = [x,y,r,g,b,a]
-        return Data(buffer: UnsafeBufferPointer.init(start: &floats, count: floats.count))
-    }
 }

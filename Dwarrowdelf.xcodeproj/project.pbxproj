@@ -19,6 +19,7 @@
 		310F048D1E17563C0089D56B /* ProtocolBuffers.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 310F048A1E17563C0089D56B /* ProtocolBuffers.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		310F048E1E17563C0089D56B /* Underdark.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 310F048B1E17563C0089D56B /* Underdark.framework */; };
 		310F048F1E17563C0089D56B /* Underdark.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 310F048B1E17563C0089D56B /* Underdark.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		31FA5DD41E1792A0009320F0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FA5DD31E1792A0009320F0 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,7 @@
 		310F04841E1755190089D56B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		310F048A1E17563C0089D56B /* ProtocolBuffers.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ProtocolBuffers.framework; path = Underdark/ProtocolBuffers.framework; sourceTree = "<group>"; };
 		310F048B1E17563C0089D56B /* Underdark.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Underdark.framework; path = Underdark/Underdark.framework; sourceTree = "<group>"; };
+		31FA5DD31E1792A0009320F0 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				310F047F1E1755190089D56B /* Assets.xcassets */,
 				310F04811E1755190089D56B /* LaunchScreen.storyboard */,
 				310F04841E1755190089D56B /* Info.plist */,
+				31FA5DD31E1792A0009320F0 /* Model.swift */,
 			);
 			path = Dwarrowdelf;
 			sourceTree = "<group>";
@@ -177,6 +180,7 @@
 				310F04791E1755190089D56B /* GameScene.swift in Sources */,
 				310F047B1E1755190089D56B /* GameViewController.swift in Sources */,
 				310F04731E1755190089D56B /* AppDelegate.swift in Sources */,
+				31FA5DD41E1792A0009320F0 /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
