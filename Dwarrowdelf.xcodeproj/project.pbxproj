@@ -21,6 +21,7 @@
 		310F048F1E17563C0089D56B /* Underdark.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 310F048B1E17563C0089D56B /* Underdark.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		31FA5DD41E1792A0009320F0 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FA5DD31E1792A0009320F0 /* Model.swift */; };
 		31FA5DD61E1A0134009320F0 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31FA5DD51E1A0134009320F0 /* Extensions.swift */; };
+		31FA5DD81E1A0A30009320F0 /* squeak.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 31FA5DD71E1A0A30009320F0 /* squeak.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -53,6 +54,7 @@
 		310F048B1E17563C0089D56B /* Underdark.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Underdark.framework; path = Underdark/Underdark.framework; sourceTree = "<group>"; };
 		31FA5DD31E1792A0009320F0 /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		31FA5DD51E1A0134009320F0 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		31FA5DD71E1A0A30009320F0 /* squeak.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = squeak.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		310F04711E1755190089D56B /* Dwarrowdelf */ = {
 			isa = PBXGroup;
 			children = (
+				31FA5DD71E1A0A30009320F0 /* squeak.mp3 */,
 				310F04721E1755190089D56B /* AppDelegate.swift */,
 				310F04741E1755190089D56B /* GameScene.sks */,
 				310F04761E1755190089D56B /* Actions.sks */,
@@ -168,6 +171,7 @@
 				310F047E1E1755190089D56B /* Main.storyboard in Resources */,
 				310F04751E1755190089D56B /* GameScene.sks in Resources */,
 				310F04801E1755190089D56B /* Assets.xcassets in Resources */,
+				31FA5DD81E1A0A30009320F0 /* squeak.mp3 in Resources */,
 				310F04831E1755190089D56B /* LaunchScreen.storyboard in Resources */,
 				310F04771E1755190089D56B /* Actions.sks in Resources */,
 			);

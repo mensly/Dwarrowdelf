@@ -31,6 +31,7 @@ class GameScene: SKScene, UDTransportDelegate {
                 target?.position = CGPoint(
                     x: CGFloat.random(min: bounds.minX, max: bounds.maxX),
                     y: CGFloat.random(min: bounds.minY, max: bounds.maxY))
+                run(SKAction.playSoundFileNamed("squeak.mp3", waitForCompletion: false))
             }
         }
     }
