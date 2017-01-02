@@ -12,17 +12,26 @@ import Underdark
 
 class GameScene: SKScene, UDTransportDelegate {
     
-    private var target : SKSpriteNode?
+    private var target : SKNode!
     private var spinnyNode : SKShapeNode?
     
     let appId: Int32 = 141573
     let nodeId: Int64 = Int64(arc4random()) + (Int64(arc4random()) << 32)
     let queue = DispatchQueue.main
     var transport: UDTransport!
+    var velocity = CGVector(dx: 0, dy: 0)
+    var previous: TimeInterval? = nil
+    var bounds: CGRect!
     var peers = [String:[UDLink]]()   // nodeId to links to it.
     var enabled: Bool = true {
         didSet {
             self.target?.isHidden = !enabled
+            if (enabled) {
+                velocity = CGVector(dx: 0, dy: 0)
+                target?.position = CGPoint(
+                    x: CGFloat.random(min: bounds.minX, max: bounds.maxX),
+                    y: CGFloat.random(min: bounds.minY, max: bounds.maxY))
+            }
         }
     }
     
@@ -40,7 +49,8 @@ class GameScene: SKScene, UDTransportDelegate {
         }
         
         // Get target node from scene and store it for use later
-        self.target = self.childNode(withName: "//target") as? SKSpriteNode
+        self.target = self.childNode(withName: "//target")
+        bounds = frame.insetBy(dx: target.frame.width / 2, dy: target.frame.height / 2)
         
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
@@ -61,7 +71,7 @@ class GameScene: SKScene, UDTransportDelegate {
         if (target.contains(pos)) {
             let potentialLinks = Array(peers.values.flatMap { $0.first })
             if (!potentialLinks.isEmpty) {
-                potentialLinks[Int(arc4random_uniform(UInt32(potentialLinks.count)))]
+                potentialLinks[Int.random(n: potentialLinks.count)]
                     .sendMessage(message: SetEnabled(enabled: true))
                 enabled = false
             }
@@ -163,7 +173,25 @@ class GameScene: SKScene, UDTransportDelegate {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        // Called before each frame is rendered
+        guard let previous = previous else {
+            self.previous = currentTime
+            return
+        }
+        if enabled, let target = target {
+            let dT = CGFloat(currentTime - previous)
+            let a: CGFloat = 1000
+            velocity.dx += a * CGFloat.random * CGFloat.randomSign * dT
+            velocity.dy += a * CGFloat.random * CGFloat.randomSign * dT
+            target.position.x += velocity.dx * dT
+            target.position.y += velocity.dy * dT
+            if (!bounds.contains(target.position)) {
+                target.position.x -= velocity.dx * dT * 2
+                target.position.y -= velocity.dy * dT * 2
+                velocity.dx *= -1
+                velocity.dy *= -1
+            }
+        }
+        self.previous = currentTime
     }
     
 }
