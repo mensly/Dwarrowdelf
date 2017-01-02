@@ -12,7 +12,7 @@ import Underdark
 
 class GameScene: SKScene, UDTransportDelegate {
     
-    private var label : SKLabelNode?
+    private var target : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     
     let appId: Int32 = 141573
@@ -20,6 +20,12 @@ class GameScene: SKScene, UDTransportDelegate {
     let queue = DispatchQueue.main
     var transport: UDTransport!
     var peers = [String:[UDLink]]()   // nodeId to links to it.
+    var enabled: Bool = true {
+        didSet {
+            self.target?.isHidden = !enabled
+        }
+    }
+    
     
     deinit {
         transport?.stop()
@@ -33,12 +39,8 @@ class GameScene: SKScene, UDTransportDelegate {
             transport.start()
         }
         
-        // Get label node from scene and store it for use later
-        self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
-        if let label = self.label {
-            label.alpha = 0.0
-            label.run(SKAction.fadeIn(withDuration: 2.0))
-        }
+        // Get target node from scene and store it for use later
+        self.target = self.childNode(withName: "//target") as? SKLabelNode
         
         // Create shape node to use during mouse interaction
         let w = (self.size.width + self.size.height) * 0.05
@@ -74,9 +76,13 @@ class GameScene: SKScene, UDTransportDelegate {
             self.addChild(n)
         }
         if (shared) {
-            for link in peers.values.flatMap({ $0.first }) {
-                link.sendMessage(message: ChildModel(pos: pos, color: color))
-            }
+            sendMessage(message: ChildModel(pos: pos, color: color))
+        }
+    }
+    
+    func sendMessage(message: Sendable) {
+        for link in peers.values.flatMap({ $0.first }) {
+            link.sendMessage(message: message)
         }
     }
     
@@ -102,7 +108,7 @@ class GameScene: SKScene, UDTransportDelegate {
         case let model as ChildModel:
             addChild(atPoint: model.pos, withColor: model.color, shared: false)
         case let enabled as SetEnabled:
-            // TODO
+            self.enabled = enabled.enabled
             break
         default: break
         }
@@ -111,6 +117,17 @@ class GameScene: SKScene, UDTransportDelegate {
     public func transport(_ transport: UDTransport, linkConnected link: UDLink) {
         if (peers[String(link.nodeId)] == nil) {
             peers[String(link.nodeId)] = [UDLink]()
+            if (enabled) {
+                print("I am enabled")
+                if (link.nodeId < nodeId) {
+                    print("Disable other")
+                    link.sendMessage(message: SetEnabled(enabled: false))
+                }
+                else {
+                    print("Disable myself")
+                    self.enabled = false
+                }
+            }
         }
         
         var links: [UDLink] = peers[String(link.nodeId)]!
